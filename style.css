@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #F3F3F3;
+    font-size: 14px;
+}
+
+header{
+    background-color: #FFF;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 25px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+header img{
+    width: 75px;
+    height: 53px;
+}
+
+header .icone-pessoas{
+    font-size: 40px;
+}
+
+div.container-mensagens{
+    margin-top: 106px;
+    margin-bottom: 90px;
+}
+
+div.mensagem{
+    height: 40px;
+    background-color: #FFF;
+    margin: 4px 0px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+div.mensagem-entrada-saida{
+    background-color: #DCDCDC;
+}
+
+div.mensagem-reservada{
+    background-color: #FFDEDE;
+}
+
+div.mensagem p.hora{
+    color: #818181;
+    margin-right: 6px;
+}
+
+footer{
+    background-color: #FFF;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 25px;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+}
+
+footer input{
+    height: 80px;
+    width: 85%;
+    border: none;
+    font-size: 18px;
+    color: #000;
+}
+
+footer input::placeholder{
+    font-style: italic;
+}
+
+footer .icone-enviar-msg{
+    font-size: 27px;
+    cursor: pointer;
+}
