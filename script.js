@@ -11,9 +11,10 @@ function tratarErroAdUsuario(erro){
 }
 
 let objNome
+let nome
 
 function entrarSala(){
-    let nome = prompt("Qual seu nome?")
+    nome = prompt("Qual seu nome?")
 
     objNome = {
         name: nome
@@ -42,7 +43,6 @@ let mensagens = []
 
 function buscarMensagens() {
     let promise = axios.get("https://mock-api.driven.com.br/api/v6/uol/messages")
-    console.log(promise)
     promise.then(function (resposta){
         mensagens = resposta.data
         exibirMensagens()
@@ -85,5 +85,23 @@ setInterval(manterConexao, 4500)
 
 setInterval(buscarMensagens, 3000)
 
+function enviarMensagem(){
+    let mensagem = document.querySelector("footer input").value
 
+    let objMensagem = {
+        from: nome,
+        to: "Todos",
+        text: mensagem,
+        type: "message"
+    }
+
+    let promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", objMensagem)
+    promise.then(function (){
+        buscarMensagens()
+        document.querySelector("footer input").value = ""
+    })
+    promise.catch(function (){
+        window.location.reload()
+    })
+}
 
