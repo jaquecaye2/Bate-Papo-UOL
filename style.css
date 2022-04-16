@@ -60,6 +60,10 @@ div.mensagem p.hora{
     margin-right: 6px;
 }
 
+div.mensagem strong{
+    font-weight: bold;
+}
+
 footer{
     background-color: #FFF;
     height: 80px;
