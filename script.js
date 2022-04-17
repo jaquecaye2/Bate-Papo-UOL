@@ -146,6 +146,10 @@ function enviarMensagem(){
 
     let objMensagem
 
+    if (nomeContatoSelecionado === undefined){
+        nomeContatoSelecionado = "Todos"
+    }
+
     if (nomeContatoSelecionado === "Todos"){
         objMensagem = {
             from: nome,
@@ -172,4 +176,39 @@ function enviarMensagem(){
     })
 }
 
+function enviarMensagemEnter(){
+    if (event.keyCode === 13){
+        let mensagem = document.querySelector("footer input").value
 
+        let objMensagem
+
+        if (nomeContatoSelecionado === undefined){
+            nomeContatoSelecionado = "Todos"
+        }
+
+        if (nomeContatoSelecionado === "Todos"){
+            objMensagem = {
+                from: nome,
+                to: "Todos",
+                text: mensagem,
+                type: "message"
+            }
+        } else {
+            objMensagem = {
+                from: nome,
+                to: nomeContatoSelecionado,
+                text: mensagem,
+                type: "private_message"
+            }
+        }
+
+        let promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/messages", objMensagem)
+        promise.then(function (){
+            buscarMensagens()
+            document.querySelector("footer input").value = ""
+        })
+        promise.catch(function (){
+            window.location.reload()
+        })
+    }
+}
