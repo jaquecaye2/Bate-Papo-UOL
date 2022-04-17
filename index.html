@@ -11,9 +11,40 @@
 <body>
     <header>
         <img src="images/Logo.png" alt="">
-        <ion-icon name="people" class="icone-pessoas"></ion-icon>
+        <ion-icon name="people" class="icone-pessoas" onclick="menuLateralAparecer()"></ion-icon>
     </header>
     <div class="container-mensagens">
+    </div>
+
+    <div class="menu-lateral escondido">
+        <div class="fundo-preto" onclick="menuLateralDesaparecer()"></div>
+        <div class="participantes">
+            <div class="titulo">
+                <p>Escolha um contato para enviar mensagem:</p>
+            </div>
+
+            <div class="contatos"></div>
+            
+            <div class="visibilidade">
+                <div class="titulo">
+                    <p>Escolha a visibilidade:</p>
+                </div>
+                <div class="tipo-visibilidade publico">
+                    <div>
+                        <ion-icon name="lock-open" class="icone-contato"></ion-icon>
+                        <p>Público</p>
+                    </div>
+                    <ion-icon name="checkmark" class="checkmark visibilidade-selecionada"></ion-icon>
+                </div>
+                <div class="tipo-visibilidade reservado">
+                    <div>
+                        <ion-icon name="lock-closed" class="icone-contato"></ion-icon>
+                        <p>Reservadamente</p>
+                    </div>
+                    <ion-icon name="checkmark-outline" class="checkmark"></ion-icon>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
         <input type="text" placeholder="Escreva aqui...">

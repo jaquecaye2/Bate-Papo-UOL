@@ -31,6 +31,7 @@ header img{
 
 header .icone-pessoas{
     font-size: 40px;
+    cursor: pointer;
 }
 
 div.container-mensagens{
@@ -62,6 +63,118 @@ div.mensagem p.hora{
 
 div.mensagem strong{
     font-weight: bold;
+}
+
+div.menu-lateral{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+div.fundo-preto{
+    background-color: rgba(0, 0, 0, 0.6);
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+div.participantes{
+    background-color: #FFF;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+}
+
+div.titulo{
+    height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+div.titulo p{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 19px;
+}
+
+div.contatos{
+    padding: 0 18px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.contato {
+    width: 45%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.contato div{
+    display: flex;
+    align-items: center;
+    height: 36px;
+    cursor: pointer;
+}
+
+.icone-contato{
+    font-size: 23px;
+    margin-right: 10px;
+}
+
+div.contato p{
+    font-size: 16px;
+}
+
+div.visibilidade{
+    padding: 0 18px;
+}
+
+div.tipo-visibilidade{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.tipo-visibilidade div{
+    display: flex;
+    align-items: center;
+    height: 36px;
+}
+
+div.tipo-visibilidade p{
+    font-size: 16px;
+}
+
+.checkmark{
+    font-size: 15px;
+    font-weight: bold;
+    color: #28BB25;
+    --ionicon-stroke-width: 90px;
+    display: none;
+}
+
+.contato-selecionado{
+    display: initial;
+}
+
+.visibilidade-selecionada{
+    display: initial;
+}
+
+.escondido{
+    display: none;
 }
 
 footer{
