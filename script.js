@@ -1,32 +1,10 @@
-function tratarSucessoAdUsuario(resposta){
-    const statusCode = resposta.status
-    console.log(statusCode)
-}
-
-function tratarErroAdUsuario(erro){
-    const statusCode = erro.response.status;
-    if (statusCode === 400){
-        entrarSala()
-    }
-}
-
-let objNome
-let nome
-
-function entrarSala(){
-    nome = prompt("Qual seu nome?")
-
-    objNome = {
-        name: nome
-    }
-
-    let promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/participants", objNome)
-
-    promise.catch(tratarErroAdUsuario)
-    promise.then(tratarSucessoAdUsuario)
+let nome = localStorage.getItem('nome')
+let objNome = {
+    name: nome
 }
 
 function manterConexao(){
+
     let promise = axios.post("https://mock-api.driven.com.br/api/v6/uol/status", objNome)
 
     promise.then(function (resposta){
@@ -78,8 +56,6 @@ function exibirMensagens(){
     }
     ulMensagens.scrollIntoView(false)
 }
-
-entrarSala()
 
 setInterval(manterConexao, 4500)
 
@@ -160,6 +136,7 @@ function listaParticipantes(){
 
     document.querySelector(".visibilidade-selecionada").classList.remove("visibilidade-selecionada")
     document.querySelector(".publico .checkmark").classList.add("visibilidade-selecionada")
+    document.querySelector("footer input").placeholder = "Escreva aqui..."
 }
 
 setInterval(listaParticipantes, 10000)
