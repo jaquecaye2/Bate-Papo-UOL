@@ -45,7 +45,7 @@ function exibirMensagens(){
                 <p><strong>${mensagens[i].from}</strong> para <strong>${mensagens[i].to}</strong>: ${mensagens[i].text}</p>
             </div>
             `
-        } else {
+        } else if (mensagens[i].type === "message"){
             ulMensagens.innerHTML += `  
             <div class="mensagem">
                 <p class="hora">(${mensagens[i].time})</p>
